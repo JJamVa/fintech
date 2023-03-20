@@ -5,6 +5,7 @@ import StyledComponents from './components/StyledComponents';
 import Welcome from './components/Welcome'
 import {BrowserRouter,Route,Routes} from "react-router-dom"
 import AxiosComponent from './components/AxiosComponent';
+import NewsPage from './pages/NewsPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/input" element={<InputComponents/>}></Route>
         <Route path="/list" element={<ListComponents/>}></Route>
         <Route path="/axios" element={<AxiosComponent/>}></Route>
+        <Route path="/news" element={<NewsPage/>}></Route>
       </Routes>
     </BrowserRouter>
     //BrowserRouter의 역할은 path마다 지정해주는 것

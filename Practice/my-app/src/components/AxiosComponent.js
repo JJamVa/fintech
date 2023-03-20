@@ -8,7 +8,7 @@ const AxiosComponent = () => {
     const [data, setData] = useState();
     const handleClick = () => {
         console.log("서버로 요청을 보냅니다.")
-        const url = "https://www.youtube.com"
+        const url = "https://www.google.com"
         axios.get(url).then((response) => {//비동기 처리
             console.log(response)
             setData(response.data);
