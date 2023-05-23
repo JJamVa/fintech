@@ -24,7 +24,6 @@ const obj = {
 const d = obj
 
 var x = 10
-
 {
     const x = 2
 }
