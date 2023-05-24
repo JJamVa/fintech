@@ -17,7 +17,7 @@ const InputComponents = () => {
             <br></br>
             <p>{userName}</p>
             <input onChange={handleChange}></input>
-            <button onClick={handleClick}></button>
+            <button onClick={handleClick}>이름 바꾸기</button>
         </div>
     )
 }
