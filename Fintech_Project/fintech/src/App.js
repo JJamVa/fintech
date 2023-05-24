@@ -5,15 +5,18 @@ import StateComponent from './components/StateComponent';
 import InputComponents from './components/InputComponents';
 import ListComponents from './components/ListComponents';
 import StyledComponents from './components/StyledComponents';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="App">
-      <InputComponents></InputComponents>
-      <ListComponents></ListComponents>
-      <StyledComponents></StyledComponents>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome/>}></Route>
+        <Route path="/state" element={<StateComponent/>}></Route>
+        <Route path="/input" element={<InputComponents/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
