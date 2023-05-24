@@ -5,6 +5,7 @@
 4. sourcetree 설치하기 -> git을 관리해주는 무료 프로그램
 5. react를 설치
 6. postman설치
+7. https://developers.kftc.or.kr/dev 회원가입하기
 
 ## 지식
 - HTML(문서의 전체적인 구조)

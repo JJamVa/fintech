@@ -9,10 +9,10 @@ const HeaderBlock = styled.div`
   border-bottom: 1px solid #000;
 `;
 
-const HeaderTitle = ({title}) => {
-  return (
-    <HeaderBlock>{title}</HeaderBlock>
-  )
+const HeaderTitle = ({ title }) => {
+    return (
+        <HeaderBlock>{title}</HeaderBlock>
+    )
 }
 
 export default HeaderTitle
