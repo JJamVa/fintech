@@ -4,6 +4,7 @@
 3. git 설치하기 -> git은 팀워크를 향상해준다.
 4. sourcetree 설치하기 -> git을 관리해주는 무료 프로그램
 5. react를 설치
+6. postman설치
 
 ## 지식
 - HTML(문서의 전체적인 구조)
@@ -31,3 +32,8 @@
     - 직접할당은 가능은하지만 리렌더링이 발생하지 않기때문에 의미가 없습니다.
 
     * Funcational Component 에서는 Hook 이라는 개념을 사용합니다. = useState 를 선언하여 state 값과 setState 를 지정하였습니다.
+
+#### API란?
+ - API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. (https://www.data.go.kr)
+
+ 회원가입 사이트(https://newsapi.org/register)
