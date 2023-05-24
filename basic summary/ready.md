@@ -6,6 +6,17 @@
 5. react를 설치
 6. postman설치
 7. https://developers.kftc.or.kr/dev 회원가입하기
+    - client_id = 26cf9539-e126-4f60-ae17-9542626b4cf5
+    - secret key = 6080fce5-5196-434d-9d49-44c7ea9695c0
+    - call back url: http://localhost:3000/authResult
+    - {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAxMDIyMDA5Iiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2OTI2ODkxMTAsImp0aSI6ImVmZmMxNzNjLTFiYmMtNDRlNC1iZTUwLWNjOTI5MGRhYjM1NyJ9.K86hktPMjLdoiRC0huu5o_JRN8fyqAO9Ta8-PiXrRq4",
+    "token_type": "Bearer",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAxMDIyMDA5Iiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2OTM1NTMxMTAsImp0aSI6Ijk1NjdkYTEyLTlkNjItNDkyOS1iMjJhLTliY2VjZWE3ZGJlYiJ9.yMCMFqn-LreWawACOZOF5q_dL3Ba5F9MMzOIR4drYdU",
+    "expires_in": 7775999,
+    "scope": "inquiry login transfer",
+    "user_seq_no": "1101022009"
+}
 
 ## 지식
 - HTML(문서의 전체적인 구조)
@@ -35,6 +46,6 @@
     * Funcational Component 에서는 Hook 이라는 개념을 사용합니다. = useState 를 선언하여 state 값과 setState 를 지정하였습니다.
 
 #### API란?
- - API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. (https://www.data.go.kr)
+ - API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. (https://www.data.go.kr) 회원가입 사이트(https://newsapi.org/register)
 
- 회원가입 사이트(https://newsapi.org/register)
+- 오픈뱅킹의 API는 REST(REpresentational State Transfer) 방식으로 구현되어, 인터넷 웹 서비스의 형태로 제공됩니다. 아래와 같은 API를 제공하며, 하나의 API는 하나의 웹 서비스 URI로 매핑됩니다. 
