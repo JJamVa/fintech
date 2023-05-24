@@ -6,6 +6,7 @@ import InputComponents from './components/InputComponents';
 import ListComponents from './components/ListComponents';
 import StyledComponents from './components/StyledComponents';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+import AxiosComponents from './components/AxiosComponents';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Welcome/>}></Route>
         <Route path="/state" element={<StateComponent/>}></Route>
         <Route path="/input" element={<InputComponents/>}></Route>
+        <Route path="/axios" element={<AxiosComponents/>}></Route>
       </Routes>
     </BrowserRouter>
   );
