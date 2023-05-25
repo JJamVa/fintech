@@ -9,6 +9,8 @@
     - client_id = 26cf9539-e126-4f60-ae17-9542626b4cf5
     - secret key = 6080fce5-5196-434d-9d49-44c7ea9695c0
     - call back url: http://localhost:3000/authResult
+    - accessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAxMDIyMDA5Iiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2OTI3OTM3MTMsImp0aSI6IjM3MTlmYTZmLTIzNjktNDI4Yi04YzFhLTY1Mjk4YjdmNTdjNSJ9.TWBTB8_cadEE6QLAAQk_hUWcDENr5FP6SUsMfChdw-Q
+    - userNo: 1101022009
     - {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxMTAxMDIyMDA5Iiwic2NvcGUiOlsiaW5xdWlyeSIsImxvZ2luIiwidHJhbnNmZXIiXSwiaXNzIjoiaHR0cHM6Ly93d3cub3BlbmJhbmtpbmcub3Iua3IiLCJleHAiOjE2OTI2ODkxMTAsImp0aSI6ImVmZmMxNzNjLTFiYmMtNDRlNC1iZTUwLWNjOTI5MGRhYjM1NyJ9.K86hktPMjLdoiRC0huu5o_JRN8fyqAO9Ta8-PiXrRq4",
     "token_type": "Bearer",
