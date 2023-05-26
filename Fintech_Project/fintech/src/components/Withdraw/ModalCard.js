@@ -27,50 +27,81 @@ const WithDrawButton = styled.button`
 `;
 
 const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
-  //fintechUseNo : 내계좌
-  //tofintechno : QR 코드로 읽어온 핀테크 계좌
-  const [amount, setamount] = useState("");
+    //fintechUseNo : 내계좌
+    //tofintechno : QR 코드로 읽어온 핀테크 계좌
+    const [amount, setamount] = useState("");
 
-  const genTransId = () => {
-    let countnum = Math.floor(Math.random() * 1000000000) + 1;
-    const clientNo = "M202300440";
-    let transId = clientNo + "U" + countnum;
-    return transId;
-  };
+    const getTransId = () => {
+        let countnum = Math.floor(Math.random() * Math.pow(10,9)) + 1;
+        const clientNo = "M202300432";
+        let transId = clientNo + "U" + countnum;
+        return transId;
+    };
 
-  const handlePayButtonClick = () => {
-    // 출금 이체 발생시키기
-    // data params json
-    // tran_amt, fintech_use_num, req_client_fintech_use_num, bank_tran_id 고정값 사용 금지 나머지는 고정값으로
-    // axios option으로 요청을 작성하기 <- api 요청
-    // application/json 은 데이터를 어떻게 전송?
-    // 결과를 로그로 작성
-  };
+    const handlePayButtonClick = () => {
+        const accessToken = localStorage.getItem("accessToken")
 
-  const deposit = () => {
-    /**
-     * #Last Work
-     * 입금이체 작성해 주세요 !
-     * 2legged token 사용 !
-     * 입금을 하는 계좌를 잘 선택해 주세요
-     */
-  };
+        const setData = {
+            bank_tran_id: getTransId(),
+            cntr_account_type: "N",
+            cntr_account_num: "100000000001",
+            dps_print_content: "쇼핑몰환불",
+            fintech_use_num: fintechUseNo,
+            wd_print_content: "오픈뱅킹출금",
+            tran_amt: amount,
+            tran_dtime: "20230526130000",
+            req_client_name: "홍길동",
+            req_client_fintech_use_num: fintechUseNo,
+            req_client_num: "132312314",
+            transfer_purpose: "ST",
+            recv_client_name: "홍길동",
+            recv_client_bank_code: "003",
+            recv_client_account_num: "100000000001"
+        }
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    console.log(value);
-    setamount(value);
-  };
+        const option = {
+            method: "POST",
+            url:"/v2.0/transfer/withdraw/fin_num",
+            headers:{
+                Authorization: `Bearer ${accessToken}`
+            },
+            data: setData
+        }
+        // 출금 이체 발생시키기
+        // data params json
+        // tran_amt, fintech_use_num, req_client_fintech_use_num, bank_tran_id 고정값 사용 금지 나머지는 고정값으로
+        // axios option으로 요청을 작성하기 <- api 요청
+        // application/json 은 데이터를 어떻게 전송?
+        axios(option).then(({data}) => {
+            console.log(data)
+        })
+        // 결과를 로그로 작성
+    };
 
-  return (
-    <ModalCardBlock>
-      <CardTitle>{bankName}</CardTitle>
-      <FintechUseNo>{fintechUseNo}</FintechUseNo>
-      <p>{tofintechno}로 돈을 보냅니다.</p>
-      <input onChange={handleChange}></input>
-      <WithDrawButton onClick={handlePayButtonClick}>결제하기</WithDrawButton>
-    </ModalCardBlock>
-  );
+    const deposit = () => {
+        /**
+         * #Last Work
+         * 입금이체 작성해 주세요 !
+         * 2legged token 사용 !
+         * 입금을 하는 계좌를 잘 선택해 주세요
+         */
+    };
+
+    const handleChange = (e) => {
+        const { value } = e.target;
+        console.log(value);
+        setamount(value);
+    };
+
+    return (
+        <ModalCardBlock>
+            <CardTitle>{bankName}</CardTitle>
+            <FintechUseNo>{fintechUseNo}</FintechUseNo>
+            <p>{tofintechno}로 돈을 보냅니다.</p>
+            <input onChange={handleChange}></input>
+            <WithDrawButton onClick={handlePayButtonClick}>결제하기</WithDrawButton>
+        </ModalCardBlock>
+    );
 };
 
 export default ModalCard;
