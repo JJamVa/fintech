@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import BalanceCard from '../components/Balance/BalanceCard';
 
-
 const BalancePage = () => {
     const queryParams = useLocation().search;
     const fintechUseNo = queryString.parse(queryParams).fintechUseNo;
@@ -21,15 +20,14 @@ const BalancePage = () => {
         getTransaction();
     }, [])
 
-    const getTransId = () => {
+    const getTransId = () => {//새로고침을 하면 간간히 length에러가 발생하는데 랜덤난수의 문제로 인해서 발생예상
         const rand = Math.floor(Math.random() * Math.pow(10, 9)) + 1
         const public_code = "M202300432"
-        return public_code + "U" + rand;
+        const id = public_code + "U" + rand
+        return id;
     };
 
     const getBalance = () => {
-        // const rand = Math.floor(Math.random() * Math.pow(10, 9)) + 1
-        // Math.floor(Math.random() * 1000000000) + 1
         const sendData = {
             bank_tran_id: getTransId(),
             fintech_use_num: fintechUseNo,
