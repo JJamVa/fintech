@@ -74,11 +74,58 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
         // application/json 은 데이터를 어떻게 전송?
         axios(option).then(({data}) => {
             console.log(data)
+            if(data.rsp_code === "A0000"){
+                window.alert("결제 성공")
+                deposit()
+            }else{
+                window.alert("결제 실패")
+            }
         })
         // 결과를 로그로 작성
     };
 
     const deposit = () => {
+        const twoLeggedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJNMjAyMzAwNDMyIiwic2NvcGUiOlsib29iIl0sImlzcyI6Imh0dHBzOi8vd3d3Lm9wZW5iYW5raW5nLm9yLmtyIiwiZXhwIjoxNjkyODYyNTUyLCJqdGkiOiI5YjFhZmU4Ny03NjY0LTRkMmQtYTI1Mi0zNTc0YWVjNWNkMjQifQ.TeEcdGYPiVSF-6HrWVXvq4wFSkiPGRe9v6rWEp-awwY"
+
+        const setData = {
+            cntr_account_type: "N",
+            cntr_account_num: "100000000001",
+            wd_pass_phrase: "NONE",
+            wd_print_content: "환불금액",
+            name_check_option: "off",
+            tran_dtime: "20250526130000",
+            req_cnt: "1",
+            req_list: [
+                {
+                    tran_no: "1",
+                    bank_tran_id: getTransId(),
+                    fintech_use_num: tofintechno,
+                    print_content: "오픈서비스캐시백",
+                    tran_amt: amount,
+                    req_client_name: "홍길동",
+                    req_client_fintech_use_num : fintechUseNo,
+                    req_client_num: "1234",
+                    transfer_purpose: "ST"
+                }
+            ]
+        }
+
+        const option = {
+            method:"POST",
+            url:"/v2.0/transfer/deposit/fin_num",
+            headers:{
+                Authorization: `Bearer ${twoLeggedToken}`
+            },
+            data: setData
+        }
+
+        axios(option).then(({data})=>{
+            if(data.rsp_code === "A0000" || data.rsp_code === "A0015"){
+                window.alert("입금 완료!")
+            }else{
+                window.alert("입금 실패!")
+            }
+        })
         /**
          * #Last Work
          * 입금이체 작성해 주세요 !
