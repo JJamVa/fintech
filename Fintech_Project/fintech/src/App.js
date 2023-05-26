@@ -10,7 +10,7 @@ import NewsPage from './pages/NewsPage';
 import AuthPage from './pages/AuthPage';
 import AuthResultPage from './pages/AuthResultPage';
 import AccountList from './pages/AccountList';
-import BalanceCard from './pages/BalanceCard';
+import BalancePage from './pages/BalancePage';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Route path="/main" element={<AccountList/>}></Route>
         <Route path="/news" element={<NewsPage/>}></Route>
         <Route path="/AuthResult" element={<AuthResultPage/>}></Route>
-        <Route path="/balance" element={<BalanceCard/>}></Route>
+        <Route path="/balance" element={<BalancePage/>}></Route>
       </Routes>
     </BrowserRouter>
   );
